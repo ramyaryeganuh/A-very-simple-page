@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>سن</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:tahoma;
+}
+
+body{
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.box{
+    width:340px;
+    background:white;
+    border-radius:18px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+    position:relative;
+}
+
+h2{
+    margin-bottom:20px;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    border-radius:10px;
+    border:1px solid #bbb;
+    font-size:18px;
+    text-align:center;
+}
+
+button{
+    margin-top:18px;
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background:#6c5ce7;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#4e3fc7;
+}
+
+#page2{
+    display:none;
+}
+
+.close{
+    position:absolute;
+    top:10px;
+    left:12px;
+    width:28px;
+    height:28px;
+    border-radius:50%;
+    background:red;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    font-weight:bold;
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+
+<div id="page1">
+    <h2>لطفاً سن خود را وارد کنید</h2>
+
+    <input type="number" id="age" placeholder="سن">
+
+    <button onclick="showAge()">تأیید</button>
+</div>
+
+<div id="page2">
+
+    <div class="close" onclick="fun()">✕</div>
+
+    <h2 id="result"></h2>
+
+</div>
+
+</div>
+
+<script>
+
+function showAge(){
+
+    let age=document.getElementById("age").value;
+
+    if(age===""){
+        alert("سن را وارد کنید.");
+        return;
+    }
+
+    document.getElementById("result").innerText="سن شما " + age + " سال است.";
+
+    document.getElementById("page1").style.display="none";
+    document.getElementById("page2").style.display="block";
+
+}
+
+function fun(){
+
+    alert("باشه برو انسانی کونی");
+
+}
+
+</script>
+
+</body>
+</html>
